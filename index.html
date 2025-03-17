@@ -10,17 +10,37 @@
 </head>
 <body>
 
-    <form class="form-container" method="post" id="Registrarseform" onsubmit="return adivinarNumRnd(event);">
-        <h1>Adivina el Número</h1>
-        <h2 id="subtitulo">Elegí un numero entre el 1 y el 100</h2>
+    <form class="form-container" method="post" id="Registrarseform">
+        <h1 id="titulo">Adiviná el Número</h1>
+        <h2 id="subtitulo">Elegí un número entre el 1 y el 100</h2>
         <div class="input-group">
             <label for="inputNumero" class="visually-hidden">Número</label>
             <input type="number" class="form-control" id="numero" placeholder="Ingrese un número" required>
         </div>
         <div class="button-group">
-            <button type="button" class="btn btn-dark">Adivinar</button>       
-         </div>
+            <button type="button" class="btn btn-dark" onclick="adivinarNumRnd(event);">Adivinar</button>
+        </div>
     </form>
+
+
+    <div class="modal fade" id="felicitacionesModal" tabindex="-1" aria-labelledby="felicitacionesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="felicitacionesModalLabel">¡Felicidades!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="mensajeGanador"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" id="btnMostrarModal" class="d-none" data-bs-toggle="modal" data-bs-target="#felicitacionesModal"></button>
 
     <script src="java.js"></script>
 </body>

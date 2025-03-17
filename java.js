@@ -1,4 +1,4 @@
-let random = Math.floor(Math.random() * 100) + 1;  
+let random = Math.floor(Math.random() * 6) + 1;  
 let contadorIntentos = 0;
 
 function adivinarNumRnd(event) {
@@ -13,12 +13,13 @@ function adivinarNumRnd(event) {
     contadorIntentos++;
 
     if (numero < random) {
-        alert("Su número es menor al número generado. Intente nuevamente.");
+        alert("Su número es menor al número generado. Intentos:"  + contadorIntentos );
     } else if (numero > random) {
-        alert("Su número es mayor al número generado. Intente nuevamente.");
+        alert("Su número es mayor al número generado. Intentos:"  + contadorIntentos );
     } else {
-        alert("¡Felicitaciones! Adivinaste el número en " + contadorIntentos + " intentos.");
-        return true;  
+        document.getElementById("mensajeGanador").innerText = "¡Felicitaciones! Adivinaste el número en " + contadorIntentos + " intentos.";
+        document.getElementById("btnMostrarModal").click(); 
+        return true;
     }
 
     document.getElementById('numero').value = '';
