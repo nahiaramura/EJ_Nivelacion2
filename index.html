@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+    <src>"style.css"</src>
+</head>
+<body>
+    <div class="container registro">
+        <form method="post" id="Registrarseform" onsubmit="return adivinarNumRnd(event);">
+            <div class="form-group margin">
+                <label for="numero">Ingrese un número:</label>
+                <input type="number" class="form-control" id="numero" name="numero" placeholder="Introducir número" min="1" max="100" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
